@@ -1,0 +1,79 @@
+{%include head.html%}
+
+<body>
+    {%include nav.html%}
+
+
+
+    <!-- Main controls -->
+    <div class="container">
+        <br>
+        <h2>Data input</h2>
+        <hr>
+        <h3>Track robot events</h3>
+        <button type="button" class="btn btn-primary" onclick="doevent('start');">Game Start</button>
+        <button type="button" class="btn btn-danger" onclick="doevent('abort');">Game Abort</button><br><br>
+        <button type="button" class="btn btn-danger" onclick="doevent('autofail');">Failed Autonomous</button><br><br>
+        <button type="button" class="btn btn-warning" onclick="doevent('disconn');">Connection Issue</button><br><br>
+        <button type="button" class="btn btn-warning" onclick="doevent('brownout');">Brownout</button><br><br>
+        <button type="button" class="btn btn-danger" onclick="doevent('reboot');">Robot Reboot</button><br><br>
+        <button type="button" class="btn btn-primary" onclick="doevent('start-endgame');">Endgame Start</button>
+        <button type="button" class="btn btn-danger" onclick="doevent('abort-endgame');">Endgame Abort</button>
+
+        <hr>
+        <h3>Autonomous Type</h3>
+        <form id="auto-type">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="no-auto-sel" value="option1"
+                    checked>
+                <label class="form-check-label" for="exampleRadios1">
+                    No Auto
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="pathing-auto-sel" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                    Pathing
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="human-auto-sel" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                    Human Control
+                </label>
+            </div>
+        </form>
+
+        <hr>
+        <h3>Match Result</h3>
+
+        <form id="match-score">
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Red Score" id="bscore">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Blue Score" id="rscore">
+                </div>
+            </div>
+        </form>
+
+        <hr>
+        <h3>Finalize data</h3>
+
+        <button type="button" class="btn btn-primary" onclick="genQR();">Generate QR code</button>
+
+        <br><br>
+        <div id="qrcode">
+
+        </div>
+        <br><br>
+
+
+
+    </div>
+
+    {%include footer.html%}
+    <script src="{{site.baseurl}}/assets/js/data-input.js"></script>
+</body>

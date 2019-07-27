@@ -1,0 +1,87 @@
+{%include head.html%}
+
+<body>
+    {%include nav.html%}
+
+
+
+    <!-- Main controls -->
+    <div class="container">
+        <br>
+        <h2>Data Viewer</h2>
+        <hr>
+        <h3>Scan QR code</h3>
+        <video id="preview" autoplay="autoplay" style="transform: scaleX(-1);" class="active"></video>
+
+        <!-- <br>
+        <hr>
+        <h3>Debug Info</h3>
+        <input type="text" class="form-control" placeholder="Last Scan Time" id="scan-time">
+        <input type="text" class="form-control" placeholder="Last Scan Raw Data" id="scan-data"> -->
+
+        <br>
+        <hr>
+        <h3>Recorded Game Info</h3>
+        <ul class="list-group">
+                <li class="list-group-item list-group-item-warning" id="game-status">Game Status: None</li>
+                <li class="list-group-item list-group-item-warning" id="auto-type">Auto Type: None</li>
+                <li class="list-group-item list-group-item-success" id="conn">Connection Issues: None</li>
+                <li class="list-group-item list-group-item-success" id="reboots">Robot Reboots: None</li>
+                <li class="list-group-item list-group-item-success" id="brownouts">Robot Brownouts: None</li>
+                <li class="list-group-item list-group-item-warning" id="endgame-status">Endgame Status: None</li>
+        </ul>
+
+        <br><br>
+
+        <ul class="list-group">
+                <li class="list-group-item " id="game-start">Game Start Time: </li>
+                <li class="list-group-item " id="endgame-start">Endgame Start Time: None</li>
+        </ul>
+
+        <br><br>
+
+        <ul class="list-group">
+                <li class="list-group-item list-group-item-danger" id="rscore">Red Score: </li>
+                <li class="list-group-item list-group-item-primary" id="bscore">Blue Score: </li>
+        </ul>
+
+        <br>
+        <hr>
+        <h3>Robot Logfile</h3>
+
+        <div id="rbt-log-container">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+                <button type="button" class="btn btn-success" onclick="loadFileAsText();">Display Logfile</button>
+                
+                
+            </div>
+            <div style="height:5%"></div>
+
+            <pre id="rbt-log" style="height:1200px">
+
+            </pre>
+        </div>
+
+        <br>
+        <hr>
+        <h3>Export Data</h3>
+        <input type="text" class="form-control" placeholder="Match ID" id="file-match">
+        <br>
+        <button type="button" class="btn btn-success" onclick="document.title = document.getElementById('file-match').value">Set Match Name</button>
+
+        <br><br>
+        
+        <p>Press CTRL+S to save this page</p>
+
+        <br><br><br><br>
+
+
+    </div>
+
+    {%include footer.html%}
+    <script src="{{site.baseurl}}/assets/js/instascan.min.js"></script>
+    <script src="{{site.baseurl}}/assets/js/data-view.js"></script>
+    <script src="{{site.baseurl}}/assets/js/qr-scanner.js"></script>
+</body>

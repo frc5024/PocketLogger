@@ -1,0 +1,109 @@
+<head>
+    <title>PocketLogger</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">PocketLogger</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/pocketlogger/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pocketlogger/input">Input</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pocketlogger/admin">Admin</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <!-- Main controls -->
+    <div class="container">
+        <br>
+        <h2>Data input</h2>
+        <hr>
+        <h3>Track robot events</h3>
+        <button type="button" class="btn btn-primary" onclick="doevent('start');">Game Start</button>
+        <button type="button" class="btn btn-danger" onclick="doevent('abort');">Game Abort</button><br><br>
+        <button type="button" class="btn btn-danger" onclick="doevent('autofail');">Failed Autonomous</button><br><br>
+        <button type="button" class="btn btn-warning" onclick="doevent('disconn');">Connection Issue</button><br><br>
+        <button type="button" class="btn btn-warning" onclick="doevent('brownout');">Brownout</button><br><br>
+        <button type="button" class="btn btn-danger" onclick="doevent('reboot');">Robot Reboot</button><br><br>
+        <button type="button" class="btn btn-primary" onclick="doevent('start-endgame');">Endgame Start</button>
+        <button type="button" class="btn btn-danger" onclick="doevent('abort-endgame');">Endgame Abort</button>
+
+        <hr>
+        <h3>Autonomous Type</h3>
+        <form id="auto-type">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="no-auto-sel" value="option1"
+                    checked>
+                <label class="form-check-label" for="exampleRadios1">
+                    No Auto
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="pathing-auto-sel" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                    Pathing
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="human-auto-sel" value="option2">
+                <label class="form-check-label" for="exampleRadios2">
+                    Human Control
+                </label>
+            </div>
+        </form>
+
+        <hr>
+        <h3>Match Result</h3>
+
+        <form id="match-score">
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Red Score" id="bscore">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Blue Score" id="rscore">
+                </div>
+            </div>
+        </form>
+
+        <hr>
+        <h3>Finalize data</h3>
+
+        <button type="button" class="btn btn-primary" onclick="genQR();">Generate QR code</button>
+
+        <br><br>
+        <div id="qrcode">
+
+        </div>
+        <br><br>
+
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/pocketlogger/assets/js/qrcode.min.js"></script>
+<script src="/pocketlogger/assets/js/jquery.min.js"></script>
+
+    <script src="/pocketlogger/assets/js/data-input.js"></script>
+</body>

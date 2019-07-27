@@ -1,0 +1,100 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>PocketLogger</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="prov67_files/bootstrap.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">PocketLogger</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8880/pocketlogger/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8880/pocketlogger/input">Input</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="http://localhost:8880/pocketlogger/admin">Admin</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+    <!-- Main controls -->
+    <div class="container">
+        <br>
+        <h2>Data Viewer</h2>
+        <hr>
+        <h3>Scan QR code</h3>
+        <video id="preview" autoplay="autoplay" style="transform: scaleX(-1);" class="active"></video>
+
+        <!-- <br>
+        <hr>
+        <h3>Debug Info</h3>
+        <input type="text" class="form-control" placeholder="Last Scan Time" id="scan-time">
+        <input type="text" class="form-control" placeholder="Last Scan Raw Data" id="scan-data"> -->
+
+        <br>
+        <hr>
+        <h3>Recorded Game Info</h3>
+        <ul class="list-group">
+                <li class="list-group-item list-group-item-success" id="game-status">Game Status: Success</li>
+                <li class="list-group-item list-group-item-success" id="auto-type">Auto Type: Human</li>
+                <li class="list-group-item list-group-item-warning" id="conn">Connection Issues: 1</li>
+                <li class="list-group-item list-group-item-success" id="reboots">Robot Reboots: None</li>
+                <li class="list-group-item list-group-item-success" id="brownouts">Robot Brownouts: None</li>
+                <li class="list-group-item list-group-item-success" id="endgame-status">Endgame Status: Success</li>
+        </ul>
+
+        <br><br>
+
+        <ul class="list-group">
+                <li class="list-group-item " id="game-start">Game Start Time: 1564252056327</li>
+                <li class="list-group-item " id="endgame-start">Endgame Start Time: 1564252169645</li>
+        </ul>
+
+        <br><br>
+
+        <ul class="list-group">
+                <li class="list-group-item list-group-item-danger" id="rscore">Red Score: 61</li>
+                <li class="list-group-item list-group-item-primary" id="bscore">Blue Score: 79</li>
+        </ul>
+
+        <br>
+        <hr>
+        <h3>Robot Logfile</h3>
+
+        <div id="rbt-log-container"><div class="custom-file"><input type="file" class="custom-file-input" id="customFile"><label class="custom-file-label" for="customFile">Choose file</label></div></div>
+
+        <br>
+        <hr>
+        <h3>Export Data</h3>
+        <input type="text" class="form-control" placeholder="Match ID" id="file-match">
+        <br>
+        <button type="button" class="btn btn-success" onclick="">Save Match</button>
+
+        <br><br><br><br>
+
+
+    </div>
+
+    <script src="prov67_files/jquery-3.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="prov67_files/popper.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="prov67_files/bootstrap.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="prov67_files/qrcode.js"></script>
+<script src="prov67_files/jquery.js"></script>
+
+    <script src="prov67_files/instascan.js"></script>
+    <script src="prov67_files/data-view.js"></script>
+    <script src="prov67_files/qr-scanner.js"></script>
+</body></html>

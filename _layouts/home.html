@@ -1,0 +1,17 @@
+{%include head.html%}
+
+<body>
+    {%include nav.html%}
+
+    <!-- Home Jumbotron -->
+    <div class="jumbotron" style="height:100%">
+        <div style="height:20%"></div>
+        <h1 class="display-4">Welcome to {{site.title}}!</h1>
+        <p class="lead">{{site.description}}</p>
+        <hr class="my-4">
+        <p>To start recording data, go to the input panel.</p>
+        <a class="btn btn-primary btn-lg" href="{{site.baseurl}}/input" role="button">Start Recording</a>
+    </div>
+
+    {%include footer.html%}
+</body>
