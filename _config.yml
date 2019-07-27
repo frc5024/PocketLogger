@@ -1,7 +1,7 @@
 title: PocketLogger
 description: >- # this means to ignore newlines until "baseurl:"
   This is a tool developed by team 5024 to help humans gather robot logs from the audience.
-baseurl: "/pocketlogger" # the subpath of your site, e.g. /blog
+baseurl: "/PocketLogger" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  frc5024
 
